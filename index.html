@@ -53,12 +53,12 @@
                         </div>
                         <div class="form-group">
                             <label for="passwordSignUp">Password</label>
-                            <input value="qwqwqwqw" type="password" class="form-control" name="password" id="passwordSignUp">
+                            <input  type="password" class="form-control" name="password" id="passwordSignUp">
                             <span id="passwordSignUpHelp" class="form-text invisible">Password</span>
                         </div>
                         <div class="form-group">
                             <label for="mobileSignUp">Mobile Number</label>
-                            <input value="6280126411" type="text" onkeypress="return getNonNumerics();" class="form-control" id="mobileSignUp" name="mobile">
+                            <input  type="text" onkeypress="return getNonNumerics();" class="form-control" id="mobileSignUp" name="mobile">
                             <span id="mobileSignUpHelp" class="form-text invisible">Mobile</span>
                         </div>
                         <div class="form-group">
@@ -110,7 +110,7 @@
                 </div>
                 <div class="modal-body">
                     <div id="prev"></div>
-                    <form>
+                    <form id="logInForm">
                         <div class="form-group">
                             <label for="usernameLogIn">Username</label><i class="ml-3 fa " id="tick"></i>
                             <input type="text" class="form-control" id="usernameLogIn" name="username" required>
@@ -142,15 +142,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="forgotPasswordForm">
                         <div class="form-group">
-                            <label for="usernameForgotPassword">Email address</label>
+                            <label for="usernameForgotPassword">Username</label>
                             <input type="text" class="form-control" id="usernameForgotPassword" name="username">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" id="forgotPasswordHidden">
                             <label for="passwordForgotPassword">Password</label>
                             <input type="text" readonly class="form-control" name="password" id="passwordForgotPassword">
                         </div>
+                       <button type="button" class="btn btn-primary float-right" id="forgotPasswordSubmit" >Get Password</button>
+
                     </form>
                 </div>
                 <div class="modal-footer">

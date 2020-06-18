@@ -75,12 +75,21 @@ $(document).ready(function () {
   }
 
   /////////////////////////////////////////////////////////////
-
-  $("#signUpSubmit").click(function () {
+  function checkEverything(){
     usernameCheck();
     passwordCheck();
     mobileCheck();
     categoryCheck();
+  }
+  function clearEverything(){
+    $('#signUpForm').trigger('reset');
+    // alert("Hello  kms");
+    $("#passwordSignUp,#usernameSignUp,#mobileSignUp").removeClass(['is-valid','is-invalid']);
+    $("#passwordSignUpHelp,#usernameSignUpHelp,#mobileSignUpHelp,#categorySignUpHelp").addClass('invisible').html('dummy');
+  }
+
+  $("#signUpSubmit").click(function () {
+    checkEverything();
     event.preventDefault();
     if (!checkValidForm()) {
       return;
@@ -97,12 +106,15 @@ $(document).ready(function () {
         alert("Signed Up Successfully");
       }
       else{
-        alert(data);
+        alert("Sign Up not successful");
       } 
     });
+  });
 
+  $('#signUp').on('hidden.bs.modal', function () {
+    clearEverything();
+  });
 
-});
 });
 
 
@@ -131,6 +143,5 @@ function checkValidForm() {
     return false;
   }else{
     return Object.keys(flagUserName).every(key => flagUserName[key] == 1);
-
   }
 }

@@ -11,7 +11,7 @@ $query="select * from users where username='$username'";
 $queryResult=mysqli_query($dbConnection,$query);
 $msg=mysqli_error($dbConnection);
 if($msg != ""){
-    echo $msg;
+    echo "Some error occured while fetching data pls try again....";
     return;
 }
 $count=mysqli_num_rows($queryResult);

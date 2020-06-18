@@ -23,3 +23,6 @@ div.form-group span{
     position: relative;
     left:10%;
 }
+#forgotPasswordhidden{
+    display: none;
+}

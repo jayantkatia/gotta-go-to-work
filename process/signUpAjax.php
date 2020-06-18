@@ -19,5 +19,5 @@ if($count==1){
     exit;
 }
 else
- echo mysqli_error($dbConnection);
+ echo "Some error occured ....pls try again";
 ?>  
