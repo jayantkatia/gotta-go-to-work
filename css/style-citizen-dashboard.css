@@ -1,0 +1,15 @@
+#cards-container{
+    display: flex;
+    margin: 2%;
+}
+#cards-container>div{
+    margin:35px;
+    text-align: center;
+}
+#cards-container>div>img{
+    width: 12rem;
+    margin: 10px auto;
+    height: 12rem;
+    border-radius: 50%;
+    border: 1px solid black;
+}
