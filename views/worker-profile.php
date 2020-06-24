@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form id="workerForm" action="profile-worker-front.php" method="POST" enctype="multipart/form-data">
+    <form id="workerForm" action="../process/worker-profile-submit.php" method="POST" enctype="multipart/form-data">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="workerUsername">Username*</label>
@@ -21,7 +21,6 @@
             </div>
         </div>
         <div class="form-row">
-
             <div class="form-group col-md-6">
                 <label for="workerName">Worker Name*</label>
                 <input type="text" class="form-control" id="workerName" required name="name">
@@ -35,7 +34,6 @@
             <label for="workerAddress">Address</label>
             <input type="text" class="form-control" id="workerAddress" name="address">
         </div>
-
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="workerCity">City</label>
@@ -74,7 +72,6 @@
                 <select id="workerExp" class="form-control" name="exp">
                 </select>
             </div>
-
         </div>
         <div class="form-row">
             <label for="workerExpText">Previous Experience</label>
@@ -98,14 +95,11 @@
         </div>
         <input type="submit" class="btn btn-primary" name="update/save" value="update/save">
     </form>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="../js/worker-profile-main.js"></script>
     <script src="../js/previewPic.js"></script>
-
-    <script src="../ajax/ajax-worker-profile.js"></script>
+    <script src="../ajax/worker-profile.js"></script>
 </body>
 
 </html>

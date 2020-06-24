@@ -37,50 +37,116 @@
 
     <div id="cards-container">
         <div class="card" style="width: 18rem;" id="userProfileCard">
-            <img src="../res/images/user.png" class="card-img-top" alt="..." >
+            <img src="../res/images/user.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">User Profile</h5>
                 <p class="card-text">Change User profile </p>
                 <a href="citizen-profile.php" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-        <div class="card" style="width: 18rem;" id="modalCard">
+        <div class="card" style="width: 18rem;" id="postRequirementsCard">
             <img src="../res//images/001-leonardo.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Add work</h5>
                 <p class="card-text">Post your work requirements.</p>
-                <a href="#" data-toggle="modal" data-target="#modal" class="btn btn-primary">Go somewhere</a>
+                <a href="#" data-toggle="modal" data-target="#postRequirementsModal" class="btn btn-primary">Go
+                    somewhere</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;" id="rateCard">
+            <img src="../res/images/002-gundam.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Rate Worker</h5>
+                <p class="card-text">Rate the services you received.</p>
+                <a href="#" data-toggle="modal" data-target="#rateModal" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>
 
 
 
-<!-- !button of modal does not opens modals -->
+    <!-- !button of modal does not opens modals -->
 
-<div class="modal" tabindex="-1" role="dialog" id="modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div class="modal" tabindex="-1" role="dialog" id="postRequirementsModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Post Work Requirements</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="postRequirementsForm">
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="usernamePostRequirements">Username</label>
+                                <input type="text" class="form-control" id="usernamePostRequirements" required
+                                    name="username">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="categoryPostRequirements">Category</label>
+                                <select id="categoryPostRequirements" class="form-control" required name="category">
+                                    <option value="">Select Category..</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="problemPostRequirements">Problem</label>
+                                <input type="text" class="form-control" id="problemPostRequirements" required
+                                    name="problem">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="locationPostRequirements">Location</label>
+                                <input type="text" class="form-control" id="locationPostRequirements" required
+                                    name="location">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="cityPostRequirements">City</label>
+                                <input type="text" class="form-control" id="cityPostRequirements" required name="city">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" id="postRequirementsSubmit" class="btn btn-primary"
+                            value="Post Requirements" />
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-    <script src="../js/citizen-dashboard.js"></script>
+    <!-- 
+     -->
+
+    <div class="modal" tabindex="-1" id="rateModal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script src="../js/citizen-dashboard.js"></script>
+        <script src="../ajax/citizen-dashboard.js"></script>
 
 </body>
 

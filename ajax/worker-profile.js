@@ -1,9 +1,8 @@
 $(document).ready(function () {
     $("#workerFetch").click(function () {
-
         let username = $('#workerUsername').val();
-        let url = "../process/profile-worker-ajaxfetch.php?username=" + username;
-        url+="?callback=?";
+        let url = "../process/worker-profile-username.php?username=" + username;
+        // url+="&callback=?";
         console.log(url);
         $.getJSON(url, function (response) {
             console.log(response);
@@ -14,18 +13,14 @@ $(document).ready(function () {
                     if (response[`${val[i]}`])
                         $(`#${ref[i]}`).val(response[`${val[i]}`]);
                 }
-
-            
                 if (response["ppic"]) {
-                    $("#prev").attr("src", "uploads/" + response["ppic"]);
+                    $("#prev").attr("src", "../uploads/workers/" + response["ppic"]);
                     console.log(response["ppic"])
                 }
                 if (response["apic"]) {
-                    $("#prevAadhar").attr("src", "uploads/" + response["apic"]);
+                    $("#prevAadhar").attr("src", "../uploads/workers/" + response["apic"]);
                 }
             }
-
-
         });
     });
 });

@@ -4,8 +4,29 @@ userProfileCard.onclick=()=>{
 };
 userProfileCard.style.cursor="pointer";
 
-let modalCard=document.getElementById("modalCard");
-modalCard.onclick=()=>{
-    $("#modal").modal('show');
+let postRequirementsCard=document.getElementById("postRequirementsCard");
+postRequirementsCard.onclick=()=>{
+    $("#postRequirementsModal").modal('show');
 };
-modalCard.style.cursor="pointer";
+postRequirementsCard.style.cursor="pointer";
+
+let rateCard=document.getElementById("rateCard");
+rateCard.onclick=()=>{
+    $("#rateModal").modal('show');
+};
+rateCard.style.cursor="pointer";
+
+
+let category=["Electrician","Plumber","Carpenter","Painter","Repairman","Internet Services","Computer Technician","Manager","Personal Trainer","Home Barber services"];
+let categoryPostRequirements=document.getElementById("categoryPostRequirements");
+
+fillSelect(category,categoryPostRequirements);
+function fillSelect(ary,ref){
+    for(let i=0;i<ary.length;i++){
+        let text = document.createTextNode(ary[i]);
+        let option = document.createElement('option');
+        option.appendChild(text);
+        option.value = ary[i];
+        ref.appendChild(option);
+    }
+}

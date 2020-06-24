@@ -60,14 +60,14 @@ if($orgName==''){
 }
 else{
     $row=mysqli_fetch_array($queryUsernameResult);
-    if($row['ppic']){
+    if(isset($row['ppic'])){
     $oldFile=$row['ppic'];
-    unlink("uploads/$oldFile");
+    unlink("../uploads/workers/$oldFile");
     }
 
     $tmpName=$_FILES['ppic']['tmp_name'];
     $ppic="$username-$orgName";
-    $destination="uploads/$ppic";
+    $destination="../uploads/workers/$ppic";
     move_uploaded_file($tmpName,$destination);
 
     $querySaveUpdatePic="update workers set ppic='$ppic' where username='$username'";
@@ -96,7 +96,7 @@ if($orgName==''){
 
         $tmpName=$_FILES['apic']['tmp_name'];
         $apic="$username-aadhar-$orgName";
-        $destination="uploads/$apic";
+        $destination="../uploads/workers/$apic";
         move_uploaded_file($tmpName,$destination);
 
         $querySaveUpdatePic="update workers set apic='$apic' where username='$username'";
