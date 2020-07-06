@@ -2,7 +2,6 @@ $(document).ready(function () {
     $("#workerFetch").click(function () {
         let username = $('#workerUsername').val();
         let url = "../process/worker-profile-username.php?username=" + username;
-        // url+="&callback=?";
         console.log(url);
         $.getJSON(url, function (response) {
             console.log(response);
