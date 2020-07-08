@@ -18,7 +18,12 @@ $(document).ready(function () {
       let dataPiece = data.split(',');//added
       if (dataPiece[0] == "Successful Login") {
         $('#logInModal').modal('hide');
-        $('#msg').html(dataPiece[0] + " and category is " + dataPiece[1]);
+        if(dataPiece[1]=="worker"){
+          location.href="citizen-dashboard.php";
+        }else{
+          location.href="worker-dashboard.php";
+        }
+        // $('#msg').html(dataPiece[0] + " and category is " + dataPiece[1]);
       } else {
         $('#logInHelp').removeClass('invisible').html(dataPiece[0]).css('color', 'red');
       }
@@ -36,5 +41,23 @@ $(document).ready(function () {
   $('#logInModal').on('hide.bs.modal', function () {
     clearEverythingLogin();
   });
+
+  $("#forgotPasswordFormLink").click(function(){
+    $('#logInModal').modal('hide');
+    $('#forgotPasswordModal').on('shown.bs.modal', function () {
+      $('#usernameForgotPassword').trigger('focus');
+    }).modal('show');
+  });
+
+
+  $('#forgotPasswordModal').on('hidden.bs.modal', function () {
+    clearEverythingForgotPassword();
+});
+
+function clearEverythingForgotPassword() {
+    $('#forgotPasswordForm').trigger('reset');
+    $('#forgotPasswordHidden').hide();
+    $('#passwordForgotPassword').val('');
+}
 
 });

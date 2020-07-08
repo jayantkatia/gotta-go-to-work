@@ -1,19 +1,20 @@
 <?php
-    include_once("connection.php");
-    
-    $queryDelete="delete from requirements where dop<DATE(DATE_ADD(CURDATE(),INTERVAL -10 DAY));";
-    $queryDeleteResult=mysqli_query($dbConnection,$queryDelete);
+include_once( 'connection.php' );
 
+$category = $_GET['category'];
+$city = $_GET['city'];
+$query = "select location,problem,username,dop from requirements where city='$city' and category='$category'";
+$queryResult = mysqli_query( $dbConnection, $query );
 
-    $query="select * from requirements";
-    $queryResult=mysqli_query($dbConnection,$query);
+$arry = array();
+while( $row = mysqli_fetch_array( $queryResult ) ) {
+    $date = $row['dop'];
+   //     $rows->daysTill = date_add($row["dop"],date_interval_create_from_date_string("10 days"));
 
-    $arry=array();
-    while($row=mysqli_fetch_array($queryResult)){
-          //    $date = $row['dop'];
-      // $rows["daysTill"]=date('d', strtotime($date))+30;
-        // $row.daysTill=$row.dop
-        $arry[]=$row;
-    }
-    echo json_encode($arry);
+   $row['daysTill'] =date('Y-m-d', strtotime($date. ' + 10 days'));
+   
+      //$row['daysTill'] = date( 'd', strtotime( $date ) )+30;
+    $arry[] = $row;
+}
+echo json_encode( $arry );
 ?>

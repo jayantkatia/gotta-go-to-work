@@ -45,7 +45,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="signUpForm">    
+                    <form id="signUpForm">
                         <div class="form-group">
                             <label for="usernameSignUp">Username</label>
                             <input type="text" class="form-control" id="usernameSignUp" name="username">
@@ -53,26 +53,28 @@
                         </div>
                         <div class="form-group">
                             <label for="passwordSignUp">Password</label>
-                            <input  type="password" class="form-control" name="password" id="passwordSignUp">
+                            <input type="password" class="form-control" name="password" id="passwordSignUp">
                             <span id="passwordSignUpHelp" class="form-text invisible">Password</span>
                         </div>
                         <div class="form-group">
                             <label for="mobileSignUp">Mobile Number</label>
-                            <input  type="text" onkeypress="return getNonNumerics();"  class="form-control" id="mobileSignUp" name="mobile">
+                            <input type="text" onkeypress="return getNonNumerics();" class="form-control"
+                                id="mobileSignUp" name="mobile">
                             <span id="mobileSignUpHelp" class="form-text invisible">Mobile</span>
                         </div>
                         <div class="form-group">
                             <label for="categorySignUp">Category</label>
-                            
+
                             <div class="btn-group btn-group-toggle" data-toggle="buttons" id="categorySignUp">
                                 <label class="btn btn-outline-primary ">
-                                  <input type="radio" name="category" value="citizen" id="categorySignUpCitizen"> Citizen
+                                    <input type="radio" name="category" value="citizen" id="categorySignUpCitizen">
+                                    Citizen
                                 </label>
                                 <label class="btn btn-outline-primary">
-                                  <input type="radio" name="category" value="worker" id="categorySignUpWorker"> Worker
-                             <span id="categorySignUpHelp" class="form-text invisible">Category</span>
+                                    <input type="radio" name="category" value="worker" id="categorySignUpWorker"> Worker
+                                    <span id="categorySignUpHelp" class="form-text invisible">Category</span>
+                            </div>
                         </div>
-                       
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -82,7 +84,8 @@
             </div>
         </div>
     </div>
-</div>
+
+
     <div class="modal" tabindex="-1" role="dialog" id="logInModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -102,7 +105,7 @@
                         <div class="form-group">
                             <label for="passwordLogIn">Password</label>
                             <input type="password" class="form-control" name="password" id="passwordLogIn" required>
-                            <a href="#" data-toggle="modal" data-dismiss="modal" class="float-right" data-target="#forgotPasswordModal">Forgot Password?</a>
+                            <a href="#" id="forgotPasswordFormLink" class="float-right">Forgot Password?</a>
                         </div>
                         <span id="logInHelp" class="form-text invisible">Any problem, contact developer</span>
                     </form>
@@ -132,23 +135,27 @@
                         </div>
                         <div class="form-group" id="forgotPasswordHidden">
                             <label for="passwordForgotPassword">Password</label>
-                            <input type="text" readonly class="form-control" name="password" id="passwordForgotPassword">
+                            <input type="text" readonly class="form-control" name="password"
+                                id="passwordForgotPassword">
                         </div>
-                       <button type="button" class="btn btn-primary float-right" id="forgotPasswordSubmit" >Get Password</button>
+                        <button type="button" class="btn btn-primary float-right" id="forgotPasswordSubmit">Get
+                            Password</button>
 
                     </form>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
                 </div>
             </div>
         </div>
     </div>
 
-        <?php 
+    <!-- <?php 
             if(!empty($_GET['msg'])){
             echo $_GET['msg'] ; }   
-        ?>
-    
+    ?> -->
+
     <h3 class="text-success font-weight-bold" id="msg"></h3>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

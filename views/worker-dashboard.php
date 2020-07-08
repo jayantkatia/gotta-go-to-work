@@ -34,7 +34,7 @@
     </nav>
 
 
-
+    Welcome <?php session_start();echo $_SESSION["activeUser"] ?>!!
     <div id="cards-container">
         <div class="card" style="width: 18rem;" id="workerProfileCard">
             <img src="../res/images/user.png" class="card-img-top" alt="...">

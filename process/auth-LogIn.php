@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once('connection.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username=$_POST['username'];
@@ -22,6 +22,7 @@ if($count){
     $row=mysqli_fetch_array($queryResult);
     if($cmpPass===$row['password']){
         echo 'Successful Login,'.$row['category'];  //added
+        $_SESSION["activeUser"]=$username;
     }else{
         echo "Wrong Password";
     }

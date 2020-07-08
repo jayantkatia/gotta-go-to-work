@@ -14,7 +14,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="workerUsername">Username*</label>
-                <input type="text" class="form-control" id="workerUsername" required name="username">
+                <input type="text" class="form-control" id="workerUsername" readonly value="<?php session_start();echo $_SESSION["activeUser"] ?>" name="username">
             </div>
             <div class="offset-1 col-1">
                 <button type="button" class="btn-primary" id="workerFetch">Fetch Profile</button>

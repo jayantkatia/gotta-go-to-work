@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    // $('#forgotPasswordModal').on('shown.bs.modal', function () {
+    //     $('#usernameForgotPassword').trigger('focus');
+    //   })
     //gets password
     $('#forgotPasswordSubmit').click(function () {
         let username = $('#usernameForgotPassword').val();
@@ -9,14 +12,18 @@ $(document).ready(function () {
         });
     });
     //clears fields 
-    function clearEverythingForgotPassword() {
-        $('#forgotPasswordForm').trigger('reset');
-        $('#forgotPasswordHidden').hide();
-        $('#passwordForgotPassword').val('');
-    }
-    //on hide calls clear
-    $('#forgotPassword').on('hide.bs.modal', function () {
-        clearEverythingForgotPassword();
-    });
 
+    //on hide calls clear
+    // $('#forgotPasswordModal').on('hidden.bs.modal', function () {
+    //     alert("Haahah23");
+    //     console.log("ndjasndj");
+    //     clearEverythingForgotPassword();
+    // });
+    
+    // function clearEverythingForgotPassword() {
+    //     alert("Haahah");
+    //     $('#forgotPasswordForm').trigger('reset');
+    //     $('#forgotPasswordHidden').hide();
+    //     $('#passwordForgotPassword').val('');
+    // }
 });
