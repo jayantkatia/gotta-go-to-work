@@ -5,34 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ManPowerServices | Start</title>
+
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles-auth.css">
+
     <script src="../js/nonNumerics.js"></script>
 
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"><i class="fa "></i></span>
         </button>
+        <a id="brand-name" href="#" class="navbar-brand">ManPowerServices</a>
+
         <div class="collapse navbar-collapse" id="navbarToggler">
-            <a class="navbar-brand" href="#">ManPowerServices</a>
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <ul class="navbar-nav ml-auto mr-5">
                 <li class="nav-item">
-                    <a class="ml-5 text-white " data-toggle="modal" data-target="#signUpModal">
-                        Sign Up
+                    <a data-toggle="modal" data-target="#signUpModal">
+                        <i class="fa fa-user-plus"></i> Sign Up
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="ml-5 text-white" data-toggle="modal" data-target="#logInModal">
-                        Log In
+                    <a data-toggle="modal" data-target="#logInModal">
+                        <i class="fa fa-sign-in"></i> Log In
                     </a>
                 </li>
             </ul>
         </div>
+
     </nav>
 
     <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
@@ -72,8 +75,9 @@
                                 </label>
                                 <label class="btn btn-outline-primary">
                                     <input type="radio" name="category" value="worker" id="categorySignUpWorker"> Worker
-                                    <span id="categorySignUpHelp" class="form-text invisible">Category</span>
                             </div>
+                            <span id="categorySignUpHelp" class="form-text invisible">Category</span>
+
                         </div>
                     </form>
                 </div>
@@ -144,17 +148,12 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- <?php 
-            if(!empty($_GET['msg'])){
-            echo $_GET['msg'] ; }   
-    ?> -->
 
     <h3 class="text-success font-weight-bold" id="msg"></h3>
 

@@ -19,11 +19,14 @@ $(document).ready(function () {
     //     console.log("ndjasndj");
     //     clearEverythingForgotPassword();
     // });
+
+    $('#forgotPasswordModal').on('hidden.bs.modal', function () {
+        clearEverythingForgotPassword();
+    });
     
-    // function clearEverythingForgotPassword() {
-    //     alert("Haahah");
-    //     $('#forgotPasswordForm').trigger('reset');
-    //     $('#forgotPasswordHidden').hide();
-    //     $('#passwordForgotPassword').val('');
-    // }
+    function clearEverythingForgotPassword() {
+        $('#forgotPasswordForm').trigger('reset');
+        $('#forgotPasswordHidden').hide();
+        $('#passwordForgotPassword').val('');
+    }
 });

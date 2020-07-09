@@ -1,3 +1,4 @@
+
 #prev{
     display: block;
     border:2px solid black;
@@ -25,4 +26,91 @@ div.form-group span{
 }
 #forgotPasswordHidden{
     display: none;
+}
+#forgotPasswordFormLink{
+    color:#375BA9;
+    font-weight: bold;
+}
+
+
+
+
+body{
+    background-color: #EBEBEB;
+}
+
+
+
+
+nav{
+    background-color:#fff;
+}
+#brand-name{
+    color:#DE8A02;
+    font-size: x-large;
+    font-weight: bolder;
+    margin:0 1.5rem;
+    cursor: default;
+}
+
+
+.navbar{
+    padding:0 1rem;
+}
+.nav-item{
+    color:#375BA9;
+    font-weight: bolder;
+    font-size: larger;
+    cursor:pointer;
+    margin:0 3rem;
+}
+
+
+/* 3c64b9 */
+@media (max-width: 767px) {
+    .navbar{
+        justify-content:start;
+    }
+    .nav-item{
+        margin-top: 10px;
+        border-bottom: 1px solid #EBEBEB;
+        width:fit-content;
+    }
+}
+/* for iphone se */
+@media (max-width:360px){
+    #brand-name{
+     font-size:larger;
+        margin:0 ;
+    }
+}
+
+
+.modal-title{
+    color:#375BA9;
+    font-weight: bolder;
+    font-size: x-large;
+}
+.form-control:focus{
+    border-color: #375BA9;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
+    color: #fff;
+    background-color:#375BA9;
+    border-color: #375BA9;
+}
+.btn-outline-primary{
+    color:#375BA9;
+}
+.btn-outline-primary:hover{
+    background-color: #375BA9;
+    border-color: #375BA9;
+}
+.btn-primary{
+    background-color: #375BA9;
+    font-weight: bolder;
+}
+.btn-secondary{
+    font-weight: bolder;
 }

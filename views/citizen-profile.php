@@ -14,7 +14,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="citizenUsername">Username</label>
-                <input type="text" class="form-control" id="citizenUsername" required name="username">
+                <input type="text" class="form-control" id="citizenUsername" value="<?php session_start();echo $_SESSION["activeUser"]?>" readonly required name="username">
             </div>
             <div class="offset-1 col-1">
                 <button type="button" class="btn-primary" id="citizenFetch">Fetch Profile</button>
@@ -75,4 +75,4 @@
     <script src="../js/previewPic.js"></script>
 </body>
 
-</html>
+</html>postRequirements

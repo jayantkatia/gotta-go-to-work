@@ -130,6 +130,12 @@ $(document).ready(function () {
       if (data == "ok") {
         $('#signUpModal').modal('hide');
         alert("Signed Up Successfully");
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
       }
       else {
         alert("Sign Up not successful");
@@ -141,6 +147,9 @@ $(document).ready(function () {
   $('#signUpModal').on('hidden.bs.modal', function () {
     clearEverything();
   });
+
+
+  
 
 });
 

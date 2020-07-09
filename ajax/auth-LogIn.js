@@ -1,8 +1,9 @@
 $(document).ready(function () {
   //to focus on username when modal is shown
-  $('#loglnModal').on('shown.bs.modal', function () {
+
+  $(document).on('shown.bs.modal','#logInModal', function () {
     $('#usernameLogIn').trigger('focus');
-  })
+  });
 
   //check whether username and password are correct and logs in
   $('#logInSubmit').click(function () {
@@ -19,9 +20,9 @@ $(document).ready(function () {
       if (dataPiece[0] == "Successful Login") {
         $('#logInModal').modal('hide');
         if(dataPiece[1]=="worker"){
-          location.href="citizen-dashboard.php";
-        }else{
           location.href="worker-dashboard.php";
+        }else{
+          location.href="citizen-dashboard.php";
         }
         // $('#msg').html(dataPiece[0] + " and category is " + dataPiece[1]);
       } else {
@@ -38,7 +39,7 @@ $(document).ready(function () {
   }
 
   // when hide modal it calls clear
-  $('#logInModal').on('hide.bs.modal', function () {
+  $('#logInModal').on('hidden.bs.modal', function () {
     clearEverythingLogin();
   });
 
@@ -50,14 +51,6 @@ $(document).ready(function () {
   });
 
 
-  $('#forgotPasswordModal').on('hidden.bs.modal', function () {
-    clearEverythingForgotPassword();
-});
 
-function clearEverythingForgotPassword() {
-    $('#forgotPasswordForm').trigger('reset');
-    $('#forgotPasswordHidden').hide();
-    $('#passwordForgotPassword').val('');
-}
 
 });

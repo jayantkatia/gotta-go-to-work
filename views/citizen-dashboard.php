@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php session_start();?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +40,7 @@
     </script>
 </head>
 
-<body ng-app="myModule" ng-controller="myController">
+<body ng-app="myModule" ng-controller="myController" ng-init="userIdModal='<?php echo $_SESSION["activeUser"]?>'">
 
     <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
         <a class="navbar-brand" href="#">ManPowerServices</a>
@@ -63,8 +63,7 @@
             </form>
         </div>
     </nav>
-
-
+<p>{{userIdModal}}</p>
 
     <div id="cards-container">
         <div class="card" style="width: 18rem;" id="userProfileCard">
@@ -116,7 +115,7 @@
                 </div>
                 <div class="modal-body">
                     <div>
-                        <input type="text" ng-model="userIdModal">
+                        <input type="text" ng-model="userIdModal" readonly>
                         <button type="submit" ng-click="doFetchRequirements();">
                             Fetch Requirements
                         </button>
@@ -163,7 +162,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="usernamePostRequirements">Username</label>
-                                <input type="text" class="form-control" id="usernamePostRequirements" required
+                                <input type="text" class="form-control" ng-model="userIdModal" readonly id="usernamePostRequirements" required
                                     name="username">
                             </div>
                             <div class="form-group col-md-6">
