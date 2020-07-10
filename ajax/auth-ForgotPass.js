@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    // $('#forgotPasswordModal').on('shown.bs.modal', function () {
-    //     $('#usernameForgotPassword').trigger('focus');
-    //   })
+   $('#forgotPasswordModal').on('shown.bs.modal', function () {
+        $('#usernameForgotPassword').trigger('focus');
+    });
     //gets password
     $('#forgotPasswordSubmit').click(function () {
         let username = $('#usernameForgotPassword').val();
@@ -11,19 +11,9 @@ $(document).ready(function () {
             $('#passwordForgotPassword').val(response);
         });
     });
-    //clears fields 
-
-    //on hide calls clear
-    // $('#forgotPasswordModal').on('hidden.bs.modal', function () {
-    //     alert("Haahah23");
-    //     console.log("ndjasndj");
-    //     clearEverythingForgotPassword();
-    // });
-
     $('#forgotPasswordModal').on('hidden.bs.modal', function () {
         clearEverythingForgotPassword();
     });
-    
     function clearEverythingForgotPassword() {
         $('#forgotPasswordForm').trigger('reset');
         $('#forgotPasswordHidden').hide();

@@ -3,9 +3,10 @@ session_start();
 include_once('connection.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username=$_POST['username'];
-}else{
-    $username=$_GET['username'];    
 }
+    // }else{
+//     $username=$_GET['username'];    
+// }
 
 $query="select * from users where username='$username' and status='1'";
 $queryResult=mysqli_query($dbConnection,$query);

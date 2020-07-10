@@ -55,4 +55,3 @@ function fillSelect(ary,ref){
         ref.appendChild(option);
     }
 }
-

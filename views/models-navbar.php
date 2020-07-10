@@ -1,44 +1,7 @@
-/* Login Image */
-/* #prev{
-    display: block;
-    border:2px solid black;
-    width:150px;
-    height:150px;
-    border-radius: 50%;
-    background-image: url('../res/images/user.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 0 auto;
-    margin-bottom: 5%;
-} */
-/* Form Basic css */
-div.form-group label{
-    font-weight: 600;
-}
-div.form-group span{
-    font-size: small;
-    font-weight: 500;
-}
-/* Category Switch button margin */
-#categorySignUp{
-    position: relative;
-    left:10%;
-}
-/* Forgot Password hidden in modal visible after click button */
-#forgotPasswordHidden{
-    display: none;
-}
-/* Forgot Password link in login modal */
-#forgotPasswordFormLink{
-    color:#375BA9;
-    font-weight: bold;
-}
-
-
-
+<style>
+ 
  /* Navbar Bootstrap Customisation */
-body{
+ body{
     background-color: #EBEBEB;
 }
 nav{
@@ -51,7 +14,12 @@ nav{
     margin:0 1.5rem;
     cursor: default;
 }
-
+#brand-name>span{
+    color:black;
+}
+#brand-name .blue{
+    color:#375BA9;
+}
 .navbar{
     padding:0 1rem;
 }
@@ -62,6 +30,11 @@ nav{
     cursor:pointer;
     margin:0 3rem;
 }
+.nav-item a{
+    text-decoration:none;
+    color:#375BA9;
+}
+
 
 
 /* 3c64b9 */
@@ -121,29 +94,26 @@ nav{
 .custom-toggler.navbar-toggler {
     border-color: #fff ;
 } 
+</style>
+<div class="sticky-top">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggler">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a id="brand-name" href="#" class="navbar-brand">ManPowerServices <span>|</span> <span class="blue">{{userId}}</span></a>
 
-/* Alert Customisation */
-.alert{
-    margin:0;
-}
-.hidden{
-    display: none;
-}
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav ml-auto mr-5">
+                        <li class="nav-item">
+                            <a data-toggle="modal" data-target="#logInModal" href="#">
+                                <i class="fa fa-sign-out"></i>Log Out 
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+        </div>
 
 
-/* SuccessfulModal */
-#successfulModal{
-    color:green;
-    font-weight: bolder;
-    font-size: x-large;
-    text-align: center;
-}
-#successfulModal img{
-    display: block;
-    margin:0 auto;
-}
-#successfulModal .modal-body{
-    border:5px solid green;
-    border-radius: 1rem;
-    margin:1rem;
-}

@@ -1,9 +1,9 @@
 $(document).ready(function () {
   //to focus on username when modal is shown
 
-  $(document).on('shown.bs.modal','#logInModal', function () {
-    $('#usernameLogIn').trigger('focus');
-  });
+  $('#logInModal').on('shown.bs.modal', function () {
+       $('#usernameLogIn').trigger('focus');
+     });
 
   //check whether username and password are correct and logs in
   $('#logInSubmit').click(function () {
@@ -24,7 +24,6 @@ $(document).ready(function () {
         }else{
           location.href="citizen-dashboard.php";
         }
-        // $('#msg').html(dataPiece[0] + " and category is " + dataPiece[1]);
       } else {
         $('#logInHelp').removeClass('invisible').html(dataPiece[0]).css('color', 'red');
       }
@@ -45,12 +44,5 @@ $(document).ready(function () {
 
   $("#forgotPasswordFormLink").click(function(){
     $('#logInModal').modal('hide');
-    $('#forgotPasswordModal').on('shown.bs.modal', function () {
-      $('#usernameForgotPassword').trigger('focus');
-    }).modal('show');
   });
-
-
-
-
 });

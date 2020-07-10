@@ -29,7 +29,7 @@ function checkValidForm() {
 
 //jquery start
 $(document).ready(function () {
-
+  
   //focus on username field after modal is shown
   $('#signUpModal').on('shown.bs.modal', function () {
     $('#usernameSignUp').trigger('focus');
@@ -107,10 +107,11 @@ $(document).ready(function () {
   }
   //clears all value and help fields
   function clearEverything() {
+
     $('#signUpForm').trigger('reset');
-    // alert("Hello  kms");
     $("#passwordSignUp,#usernameSignUp,#mobileSignUp").removeClass(['is-valid', 'is-invalid']);
     $("#passwordSignUpHelp,#usernameSignUpHelp,#mobileSignUpHelp,#categorySignUpHelp").addClass('invisible').html('dummy');
+  
   }
 
   //on Submit this function calls for checking and submits
@@ -129,13 +130,11 @@ $(document).ready(function () {
 
       if (data == "ok") {
         $('#signUpModal').modal('hide');
-        alert("Signed Up Successfully");
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+        $("#successfulModal").modal("show");
+        // $(".alert").toggleClass("hidden");
+        // setTimeout(function(){$(".alert").toggleClass("hidden");},7000);
+        setTimeout(function(){$("#successfulModal").modal("hide");},4000);
+
       }
       else {
         alert("Sign Up not successful");
@@ -149,9 +148,4 @@ $(document).ready(function () {
   });
 
 
-  
-
 });
-
-
-
