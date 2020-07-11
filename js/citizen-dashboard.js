@@ -10,11 +10,11 @@ postRequirementsCard.onclick=()=>{
 };
 postRequirementsCard.style.cursor="pointer";
 
-let rateCard=document.getElementById("rateCard");
-rateCard.onclick=()=>{
-    $("#rateModal").modal('show');
-};
-rateCard.style.cursor="pointer";
+// let rateCard=document.getElementById("rateCard");
+// rateCard.onclick=()=>{
+//     $("#rateModal").modal('show');
+// };
+// rateCard.style.cursor="pointer";
 
 
 let category=["Electrician","Plumber","Carpenter","Painter","Repairman","Internet Services","Computer Technician","Manager","Personal Trainer","Home Barber services"];

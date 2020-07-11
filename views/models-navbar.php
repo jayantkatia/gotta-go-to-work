@@ -19,6 +19,7 @@ nav{
 }
 #brand-name .blue{
     color:#375BA9;
+    white-space:pre;
 }
 .navbar{
     padding:0 1rem;
@@ -95,18 +96,19 @@ nav{
     border-color: #fff ;
 } 
 </style>
+
 <div class="sticky-top">
             <nav class="navbar navbar-expand-md navbar-light">
                 <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarToggler">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a id="brand-name" href="#" class="navbar-brand">ManPowerServices <span>|</span> <span class="blue">{{userId}}</span></a>
+                <a id="brand-name" href="#" class="navbar-brand">ManPowerServices <span>&nbsp;|</span> <span class="blue">{{userPageInfo}}</span></a>
 
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav ml-auto mr-5">
                         <li class="nav-item">
-                            <a data-toggle="modal" data-target="#logInModal" href="#">
+                            <a href="../process/logout.php">
                                 <i class="fa fa-sign-out"></i>Log Out 
                             </a>
                         </li>

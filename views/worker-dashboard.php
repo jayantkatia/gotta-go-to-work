@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php session_start();
+if(!isset($_SESSION["activeUser"])){
+    header("location:index.php");
+}
+?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style-citizen-dashboard.css">
     <title>Dashborad | MPS</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        myModule.controller("myController", function ($scope, $http) {
+            $scope.userId;
+            $scope.userPageInfo;
+            $scope.start=function(){
+                $scope.userId='<?php echo $_SESSION["activeUser"];?>';
+                $scope.userPageInfo=" "+$scope.userId+"\'s  Dashboard";
+            }
+            // =($scope.userId+"'s Dashboard");
+        });
+    </script>
 </head>
 
-<body>
+<body ng-app="myModule" ng-controller="myController" ng-init="start();">
+<?php include_once("models-navbar.php");?>
 
-    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="#">ManPowerServices</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-
-
-    Welcome <?php session_start();echo $_SESSION["activeUser"] ?>!!
     <div id="cards-container">
         <div class="card" style="width: 18rem;" id="workerProfileCard">
             <img src="../res/images/user.png" class="card-img-top" alt="...">

@@ -1,0 +1,23 @@
+.hide {
+    display: none;
+}
+
+.rating>label {
+    font-size: 2rem;
+}
+
+.rating {
+    direction: rtl;
+}
+
+.rating>label:hover::before,
+.rating>label:hover~label:before,
+.rating>input:checked~label:before {
+    color: gold;
+    content: "\2605";
+    position: absolute;
+}
+.rating>label:hover::before,
+.rating>label:hover~label:before{
+    background-color: aqua;
+}
