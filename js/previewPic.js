@@ -3,7 +3,7 @@ function showpreview(file,id) {
      {
         var reader = new FileReader();
         reader.onload = function (ev) {
-            $(`#${id}`).attr('src', ev.target.result);
+            $(`#${id}`).css('background-image', `url(${ev.target.result})`);
         }
         reader.readAsDataURL(file.files[0]);
     }

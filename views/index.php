@@ -187,7 +187,6 @@
         </div>
 
         <div id="contentBody">
-            <button data-toggle="modal" data-target="#successfulModal">Click</button>
         </div>
     </div>
 

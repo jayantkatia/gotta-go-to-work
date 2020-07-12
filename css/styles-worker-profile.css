@@ -1,3 +1,101 @@
 body{
-    margin:5%;
+    box-sizing: border-box;
+}
+fieldset{
+    border:2px solid #375BA9;
+    border-radius: 2rem;
+    background-color: #fff;
+    padding:2rem;
+    margin:2rem;
+}
+form{
+    padding: 0 2rem;
+}
+#prev,#prevAadhar{
+    display: block;
+    border:2px solid black;
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    background-image: url('../res/images/user.png');
+    background-color: #EBEBEB   ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* margin: 0 auto; */
+    
+}   
+#prevAadhar{
+    width:90%;
+    /* height:63%; */
+    height:300px;   
+    /* !Value is constant */
+    background-size: contain;
+    border-radius:0;
+}
+legend{
+    display: flex;
+    align-items: baseline;
+    margin:0;
+    width:auto;
+}
+legend>div>label,#workerFileAadhar+label{
+    position: relative;
+    right:2.5rem;
+}
+.inputFile{
+    opacity:0;
+    z-index:-1;
+    position: absolute;
+}
+
+/* legend>input ,legend>label{
+    display: inline-block;
+} */
+.flexible{
+    width:0px;
+}
+label{
+    font-weight: bolder;
+}
+.form-control , textarea{
+    border: 1px solid black;
+}
+/* #workerFileAadhar+label{
+    position: relative;
+    top:23rem;
+} */
+
+.red{
+    color:red;
+}
+/* div.border-right{
+    border-right: 2px black solid !important;
+} */
+.flex{
+    display:flex;
+}
+.baseline{
+    align-items: baseline;
+}
+.vertical-horizontal-center{
+    align-items: center;
+    justify-content: center;
+}
+.flex-column{
+    flex-direction: column;
+}
+.gold{
+    background-color:#DE8A02;
+    color:#fff;
+    font-weight: bold;
+    font-size: larger;
+    border-radius: 5px;
+}
+.gold:hover{
+    color:#fff;
+    box-shadow: 0 5px 15px #DE8A02;
+}
+.hidden{
+    display:none;
 }
