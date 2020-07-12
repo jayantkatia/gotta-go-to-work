@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start();?>
+<?php session_start();
+if(!isset($_SESSION["activeUser"])){
+    header("location:index.php");
+}
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,9 +27,9 @@
                 $scope.userPageInfo=" "+$scope.userId+"\'s  Profile";
                 $scope.url=`../process/worker-profile-submit.php?username=${$scope.userId}`;
                 print_state("workerState");
-                $scope.workFetch();
+                $scope.profileFetch();
             }
-            $scope.workFetch=function () {
+            $scope.profileFetch=function () {
                 let url = "../process/worker-profile-username.php?username=" + $scope.userId;
                  console.log(url);
                 $http.get( "../process/worker-profile-username.php?username=" + $scope.userId).then(ok,notok);
@@ -90,7 +94,7 @@
             </div>
             <div class="form-group col-md-4">
                 <label for="workerEmail">Email</label>
-                <input type="text" class="form-control" id="workerEmail" name="email">
+                <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Check your Email with @, .xx')" class="form-control" id="workerEmail" name="email">
             </div>
         </div>
         <div class="form-group">

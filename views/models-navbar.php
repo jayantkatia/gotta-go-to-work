@@ -52,8 +52,18 @@ nav{
 /* for iphone se */
 @media (max-width:360px){
     #brand-name{
-     font-size:larger;
+     font-size:default;
         margin:0 ;
+    }
+}
+@media (max-width:1050px){
+    #brand-name{
+        font-size:large;
+    }
+}
+@media (max-width:450px){
+    #brand-name span{
+        display:none
     }
 }
 

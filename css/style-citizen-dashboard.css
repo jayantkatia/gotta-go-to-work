@@ -1,18 +1,25 @@
-#cards-container{
+#card-deck{
     display: flex;
-    margin: 2%;
+    margin: 1%;
+    flex-wrap: wrap;
 }
-#cards-container>div{
-    margin:35px;
+#card-deck>div{
+    margin:2rem;
     text-align: center;
+    max-width:18rem;
 }
-#cards-container>div>img{
-    width: 12rem;
+#card-deck>div>img{
+    width: 50%;
     margin: 10px auto;
-    height: 12rem;
+    height: auto;
     border-radius: 50%;
     border: 1px solid black;
 }
 
-
+.card{
+    cursor: pointer;
+}
+.card h5{
+    font-weight: bolder;
+}
 

@@ -52,22 +52,22 @@ if(!isset($_SESSION["activeUser"])){
             $scope.fetchRatings = function (username) {
                 console.log("sadasd ");
                 $http.get("../process/citizen-fetchRatings.php?username=" + username).then(ok, notok);
-                function ok(response){
-            $scope.ratingsInfo = response.data;
-            console.log($scope.ratingsInfo);
+                function ok(response) {
+                    $scope.ratingsInfo = response.data;
+                    console.log($scope.ratingsInfo);
                 }
             }
-            $scope.updateRatings=function(rid,workerUsername,index){
+            $scope.updateRatings = function (rid, workerUsername, index) {
                 console.log(rid);
 
-                var ele = document.getElementsByName(rid); 
-                for(i = 0; i < ele.length; i++) { 
-                    if(ele[i].checked) {
-                        $scope.ratingsValue=ele[i].value; 
-                        $http.get("../process/citizen-updateRatings.php?username="+workerUsername+"&rating="+$scope.ratingsValue+"&rid="+rid).then(ok,notok);
-                        function ok(response){
-                            if(response.data=="ok"){
-                                $scope.ratingsInfo.splice(index,1);
+                var ele = document.getElementsByName(rid);
+                for (i = 0; i < ele.length; i++) {
+                    if (ele[i].checked) {
+                        $scope.ratingsValue = ele[i].value;
+                        $http.get("../process/citizen-updateRatings.php?username=" + workerUsername + "&rating=" + $scope.ratingsValue + "&rid=" + rid).then(ok, notok);
+                        function ok(response) {
+                            if (response.data == "ok") {
+                                $scope.ratingsInfo.splice(index, 1);
                             }
                         }
                     }
@@ -83,43 +83,57 @@ if(!isset($_SESSION["activeUser"])){
     <?php include_once("models-successfulModal.php");?>
     <?php include_once("models-navbar.php");?>
 
-    <div id="cards-container">
-        <div class="card" style="width: 18rem;" id="userProfileCard">
-            <img src="../res/images/user.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">User Profile</h5>
-                <p class="card-text">Change User profile </p>
-                <a href="citizen-profile.php" class="btn btn-primary">Go somewhere</a>
-            </div>
+        <div id="card-deck">
+            
+                <div class="card"  id="userProfileCard">
+                    <img src="../res/images/user.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">My Profile</h5>
+                        <p class="card-text">Update your profile to get better services around you.</p>
+                        <a href="#" class="btn btn-primary">Navigate to Profile</a>
+                    </div>
+                </div>
+            
+                <div class="card"  id="postRequirementsCard" data-toggle="modal"
+                    data-target="#postRequirementsModal">
+                    <img src="../res/images/004-policy.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Add Work</h5>
+                        <p class="card-text">Post your work requirements to let service providers know</p>
+                        <button class="btn btn-primary">Post Work</button>
+                    </div>
+                </div>
+            
+                <div class="card"  id="rateCard" data-toggle="modal" data-target="#rateModal"
+                    ng-click="fetchRatings(userId);">
+                    <img src="../res/images/004-stars.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Rate Services</h5>
+                        <p class="card-text">Let the service provider know how much you loved it!!</p>
+                        <a href="#" class="btn btn-primary">Give Ratings</a>
+                    </div>
+                </div>
+            
+            
+                <div class="card"  data-toggle="modal" data-target="#requirementManagerModal">
+                    <img src="../res/images/005-plan.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Requirement Manager</h5>
+                        <p class="card-text">Keep track of all the services you need</p>
+                        <a href="#" class="btn btn-primary">Open Manager</a>
+                    </div>
+                </div>
+
+                <div class="card"  onclick="window.location.href='citizen-search.php';">
+                    <img src="../res/images/007-search.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Search Services</h5>
+                    <p class="card-text">Get going by searching service providers around you</p>
+                    <a href="#" class="btn btn-primary">Start Searching</a>
+                </div>
         </div>
-        <div class="card" style="width: 18rem;" id="postRequirementsCard">
-            <img src="../res/images/001-leonardo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Add work</h5>
-                <p class="card-text">Post your work requirements.</p>
-                <a href="#" data-toggle="modal" data-target="#postRequirementsModal" 
-                    class="btn btn-primary">Go
-                    somewhere</a>
-            </div>
+             
         </div>
-        <div class="card" style="width: 18rem;" id="rateCard">
-            <img src="../res/images/002-gundam.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Rate Worker</h5>
-                <p class="card-text">Rate the services you received.</p>
-                <a href="#" data-toggle="modal" data-target="#rateModal" ng-click="fetchRatings(userId);"class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="../res/images/001-leonardo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Requirement Manager</h5>
-                <p class="card-text">Post your work requirements.</p>
-                <a href="#" data-toggle="modal" data-target="#requirementManagerModal" class="btn btn-primary">Go
-                    somewhere</a>
-            </div>
-        </div>
-    </div>
 
 
 
@@ -246,14 +260,19 @@ if(!isset($_SESSION["activeUser"])){
                             <td>{{obj.workerUsername}}</td>
                             <td>
                                 <form>
-                            <div class="rating">
-                                <input type="radio" name={{obj.rid}} class="hide" id="star5-{{obj.rid}}" value="5"><label for="star5-{{obj.rid}}">&#9734;</label>
-                                <input type="radio" name={{obj.rid}} class="hide" id="star4-{{obj.rid}}" value="4"><label for="star4-{{obj.rid}}">&#9734;</label>
-                                <input type="radio" name={{obj.rid}} class="hide" id="star3-{{obj.rid}}" value="3"><label for="star3-{{obj.rid}}">&#9734;</label>
-                                <input type="radio" name={{obj.rid}} class="hide" id="star2-{{obj.rid}}" value="2"><label for="star2-{{obj.rid}}">&#9734;</label>
-                                <input type="radio" name={{obj.rid}} class="hide" id="star1-{{obj.rid}}" value="1"><label for="star1-{{obj.rid}}">&#9734;</label>
-                            </div>
-                            </form>
+                                    <div class="rating">
+                                        <input type="radio" name={{obj.rid}} class="hide" id="star5-{{obj.rid}}"
+                                            value="5"><label for="star5-{{obj.rid}}">&#9734;</label>
+                                        <input type="radio" name={{obj.rid}} class="hide" id="star4-{{obj.rid}}"
+                                            value="4"><label for="star4-{{obj.rid}}">&#9734;</label>
+                                        <input type="radio" name={{obj.rid}} class="hide" id="star3-{{obj.rid}}"
+                                            value="3"><label for="star3-{{obj.rid}}">&#9734;</label>
+                                        <input type="radio" name={{obj.rid}} class="hide" id="star2-{{obj.rid}}"
+                                            value="2"><label for="star2-{{obj.rid}}">&#9734;</label>
+                                        <input type="radio" name={{obj.rid}} class="hide" id="star1-{{obj.rid}}"
+                                            value="1"><label for="star1-{{obj.rid}}">&#9734;</label>
+                                    </div>
+                                </form>
                             </td>
                             <td>
                                 <button ng-click="updateRatings(obj.rid,obj.workerUsername,$index);">Update</button>

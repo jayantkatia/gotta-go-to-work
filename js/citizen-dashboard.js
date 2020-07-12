@@ -4,17 +4,6 @@ userProfileCard.onclick=()=>{
 };
 userProfileCard.style.cursor="pointer";
 
-let postRequirementsCard=document.getElementById("postRequirementsCard");
-postRequirementsCard.onclick=()=>{
-    $("#postRequirementsModal").modal('show');
-};
-postRequirementsCard.style.cursor="pointer";
-
-// let rateCard=document.getElementById("rateCard");
-// rateCard.onclick=()=>{
-//     $("#rateModal").modal('show');
-// };
-// rateCard.style.cursor="pointer";
 
 
 let category=["Electrician","Plumber","Carpenter","Painter","Repairman","Internet Services","Computer Technician","Manager","Personal Trainer","Home Barber services"];

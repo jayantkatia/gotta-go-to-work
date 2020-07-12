@@ -33,22 +33,31 @@ if(!isset($_SESSION["activeUser"])){
 <body ng-app="myModule" ng-controller="myController" ng-init="start();">
 <?php include_once("models-navbar.php");?>
 
-    <div id="cards-container">
-        <div class="card" style="width: 18rem;" id="workerProfileCard">
+    <div id="card-deck">
+        <div class="card"  id="workerProfileCard">
             <img src="../res/images/user.png" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Worker Profile</h5>
-                <p class="card-text">Change Worker profile </p>
-                <a href="worker-profile.php" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">My Profile</h5>
+                <p class="card-text">Update your profile and help us provide you better opportunities</p>
+                <a href="#" class="btn btn-primary">Navigate to Profile</a>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem;" id="rateCard">
-            <img src="../res/images/002-gundam.png" class="card-img-top" alt="...">
+        <div class="card"  id="rateCard" data-toggle="modal" data-target="#rateModal">
+            <img src="../res/images/002-verify.png" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Get Ratings</h5>
-                <p class="card-text">Get ratings for service you did.</p>
-                <a href="#" data-toggle="modal" data-target="#rateModal" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">Request Ratings</h5>
+                <p class="card-text">Good ratings are always helpful, so why not get it? </p>
+                <a href="#"  class="btn btn-primary">Ask for Ratings</a>
+            </div>
+        </div>
+
+        <div class="card"   onclick="window.location.href='worker-search.php';">
+            <img src="../res/images/007-search.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Search Work Available</h5>
+                <p class="card-text">Get going by searching work around you</p>
+                <a href="#" class="btn btn-primary">Start Searching</a>
             </div>
         </div>
     </div>
@@ -94,7 +103,7 @@ if(!isset($_SESSION["activeUser"])){
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
         </script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-        <script src="../js/worker-dashboard.js"></script>
+        <!-- <script src="../js/worker-dashboard.js"></script> -->
         <script src="../ajax/worker-dashboard.js"></script>
 
 </body>

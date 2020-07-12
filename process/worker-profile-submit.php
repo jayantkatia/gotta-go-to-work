@@ -112,7 +112,7 @@ if($orgName==''){
 
     }
 
- header("location: ../views/worker-dashboard.php");
+ header("location: ../views/worker-dashboard.php?flag=1");
 
 
 ?>
