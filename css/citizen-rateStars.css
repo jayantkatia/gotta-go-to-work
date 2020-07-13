@@ -19,5 +19,9 @@
 }
 .rating>label:hover::before,
 .rating>label:hover~label:before{
-    background-color: aqua;
+    /* background-color: rgba(255,223,0,0.2); */
+    cursor: pointer;
+    /* color: #FE7; */
+            text-shadow: 0 0 20px gold;
+    
 }

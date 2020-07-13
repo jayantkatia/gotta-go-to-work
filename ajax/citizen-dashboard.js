@@ -3,7 +3,10 @@ $(document).ready(function () {
         //perform button function
         let url = "../process/citizen-dashboard-post.php";
         let data = $("#postRequirementsForm").serialize();
+        // console.log(data);
 
+        data=data+"&username="+$('#citizenUsername').val();
+        // console.log(data);
         $.post(url, data, function (response, status) {
             alert(response);
             $("#postRequirementsModal").modal("hide");

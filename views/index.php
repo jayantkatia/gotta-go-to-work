@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ManPowerServices | Start</title>
+    <title>MPS | Start</title>
     <!-- Font Awesome -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <!-- Bs CSS -->
@@ -125,11 +125,6 @@
                             <label for="usernameForgotPassword">Username</label>
                             <input type="text" class="form-control" id="usernameForgotPassword" name="username" />
                         </div>
-                        <div class="form-group" id="forgotPasswordHidden">
-                            <label for="passwordForgotPassword">Password</label>
-                            <input type="text" readonly class="form-control" name="password"
-                                id="passwordForgotPassword" />
-                        </div>
                         <button type="button" class="btn btn-primary float-right" id="forgotPasswordSubmit">
                             Get Password
                         </button>
@@ -148,6 +143,18 @@
                     <img src="../res/images/giphy.gif" alt="">
                     <small>Congratulations on starting your experience to an exciting way to
                         find and deliver services...</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="successfulModalForgot">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content round-4">
+                <div class="modal-body">
+                    <p>Password Sent Successfully</p>
+                    <img src="../res/images/giphy.gif" alt="">
+                    <small>Check your registered contant number</small>
                 </div>
             </div>
         </div>
@@ -188,7 +195,31 @@
         </div>
 
         <div id="contentBody">
-            <!-- <button data-toggle="modal" data-target="#successfulModal">Successful Modal</button> -->
+            <!-- <button data-toggle="modal" data-target="#successfulModalForgot">Successful Modal</button> -->
+
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../res/images/cc-1.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../res/images/cc-2.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+
+
+
+
         </div>
     </div>
 

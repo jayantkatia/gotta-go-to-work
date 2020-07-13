@@ -135,18 +135,27 @@ nav{
 
 
 /* SuccessfulModal */
-#successfulModal{
+#successfulModal,#successfulModalForgot{
     color:green;
     font-weight: bolder;
     font-size: x-large;
     text-align: center;
 }
-#successfulModal img{
+#successfulModal img,#successfulModalForgot img{
     display: block;
     margin:0 auto;
 }
-#successfulModal .modal-body{
+#successfulModal .modal-body , #successfulModalForgot .modal-body{
     border:5px solid green;
     border-radius: 1rem;
     margin:1rem;
+}
+
+
+
+#carouselExampleControls{
+    /* width:80%; */
+    /* margin: 0 auto; */
+    height: 400px;
+    overflow: hidden;
 }

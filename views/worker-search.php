@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php 
+    session_start();
+    if(!isset($_SESSION["activeUser"]))
+        header("location:index.php");
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citizen Search</title>
+    <title>MPS | Search</title>
+    <link href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -12,6 +18,13 @@
     <script>
         var myModule = angular.module("myModule", []);
         myModule.controller("myController", function ($scope, $http) {
+
+            $scope.userId;
+            $scope.userPageInfo;
+            $scope.start=function(){
+                $scope.userId='<?php echo $_SESSION["activeUser"];?>';
+                $scope.userPageInfo=" "+$scope.userId+"\'s  Dashboard";
+            }
 
             $scope.cities;
             $scope.citySelected;
@@ -54,7 +67,8 @@
     </script>
 </head>
 
-<body ng-app="myModule" ng-controller="myController" ng-init="fetchLists();">
+<body ng-app="myModule" ng-controller="myController" ng-init="fetchLists();start();">
+    <?php include_once("models-navbar.php");?>
     <select ng-options="obj.category for obj in categories" ng-model="categorySelected">
     </select>
     <select ng-options="obj.city for obj in cities" ng-model="citySelected">

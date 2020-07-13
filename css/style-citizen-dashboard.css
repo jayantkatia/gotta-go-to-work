@@ -23,3 +23,36 @@
     font-weight: bolder;
 }
 
+
+/* Ratings Worker */
+.hidden{
+    display: none;
+}
+ label{
+    font-weight: bold;
+}
+ .form-control{
+    border-color: black;
+}
+
+.emptyModal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.emptyModal>img{
+    width:30%;
+}
+.emptyModal>h3{
+    color:#bb7f2b;
+    font-weight: bolder;
+}
+.emptyModal p{
+    font-weight:bold;
+    font-size: large;
+}
+
+/* table{
+    overflow-x:auto;
+} */

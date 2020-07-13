@@ -1,0 +1,10 @@
+.center{
+    margin:1rem;
+    text-align: center;
+}
+.center>select{
+    font-size: larger;
+}
+.row{
+    margin:2rem;
+}

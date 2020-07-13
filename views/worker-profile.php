@@ -68,7 +68,7 @@ if(!isset($_SESSION["activeUser"])){
 
         });
     </script>
-    <title>Profile</title>
+    <title>MPS | Profile</title>
 </head>
 
 <body ng-app="myModule" ng-controller="myController" ng-init="start();">
@@ -142,9 +142,10 @@ if(!isset($_SESSION["activeUser"])){
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="workerCategory">Category<span class="red">*</span></label>
-                <select id="workerCategory" REQUIRED class="form-control" name="category">
-                        <option value="">Please select your work field</option>
-                </select>
+                <input list="workerCategories" id="workerCategory" REQUIRED class="form-control" name="category">
+                <datalist id="workerCategories">
+                        
+                </datalist>
             </div>
             <div class="form-group col-md-6">
                 <label for="workerSpec">Specialistaion</label>
