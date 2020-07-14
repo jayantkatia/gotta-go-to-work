@@ -68,7 +68,7 @@ if(!isset($_SESSION["activeUser"])){
 
         });
     </script>
-    <title>MPS | Profile</title>
+    <title>WP | Profile</title>
 </head>
 
 <body ng-app="myModule" ng-controller="myController" ng-init="start();">

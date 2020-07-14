@@ -12,7 +12,7 @@
     
     <link rel="stylesheet" href="../css/styles-citizen-profile.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
-    <title>MPS | Profile</title>
+    <title>WP | Profile</title>
     <script>
         var myModule=angular.module("myModule",[]);
         myModule.controller("myController",function($scope,$http){

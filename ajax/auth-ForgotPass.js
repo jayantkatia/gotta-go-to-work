@@ -5,6 +5,10 @@ $(document).ready(function () {
     //gets password
     $('#forgotPasswordSubmit').click(function () {
         let username = $('#usernameForgotPassword').val();
+        if(!username){
+            alert("Username field empty");
+            return;
+        }
         let url = "../process/auth-ForgotPass.php?username=" + username;
         $.get(url, function (response) {
             // $('#forgotPasswordHidden').show();

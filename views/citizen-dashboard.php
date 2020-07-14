@@ -13,7 +13,7 @@ if(!isset($_SESSION["activeUser"])){
     <link href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style-citizen-dashboard.css">
-    <title>MPS | Dashboard</title>
+    <title>WP | Dashboard</title>
     <link rel="stylesheet" href="../css/citizen-tables.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
     <link rel="stylesheet" href="../css/citizen-rateStars.css">
@@ -99,7 +99,7 @@ if(!isset($_SESSION["activeUser"])){
         </div>
 
         <div class="card" id="postRequirementsCard" data-toggle="modal" data-target="#postRequirementsModal">
-            <img src="../res/images/004-policy.png" class="card-img-top" alt="...">
+            <img src="../res/images/add.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Add Work</h5>
                 <p class="card-text">Post your work requirements to let service providers know</p>

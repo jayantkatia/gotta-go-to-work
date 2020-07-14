@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php 
+ session_start();
+ session_destroy();
+?>
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MPS | Start</title>
+    <title>WP | Start</title>
     <!-- Font Awesome -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <!-- Bs CSS -->
@@ -16,6 +19,11 @@
 </head>
 
 <body>
+
+
+
+
+
     <!-- Modals -->
     <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
         <div class="modal-dialog">
@@ -123,7 +131,7 @@
                     <form id="forgotPasswordForm">
                         <div class="form-group">
                             <label for="usernameForgotPassword">Username</label>
-                            <input type="text" class="form-control" id="usernameForgotPassword" name="username" />
+                            <input type="text" class="form-control"  id="usernameForgotPassword" name="username" />
                         </div>
                         <button type="button" class="btn btn-primary float-right" id="forgotPasswordSubmit">
                             Get Password
@@ -168,7 +176,7 @@
                     data-target="#navbarToggler">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a id="brand-name" href="#" class="navbar-brand">ManPowerServices</a>
+                <a id="brand-name" href="#" class="navbar-brand">WorkPanel</a>
 
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav ml-auto mr-5">
@@ -196,14 +204,18 @@
 
         <div id="contentBody">
             <!-- <button data-toggle="modal" data-target="#successfulModalForgot">Successful Modal</button> -->
-
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <!-- <div class="carousel-item active">
                         <img src="../res/images/cc-1.jpeg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../res/images/cc-2.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h2>Hire</h2> <p>Get hired or hire for services.</p></div></div> -->
+                    <div class="carousel-item active">
+                        <img src="../res/images/car1.jpeg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block left-black">
+                            <h3>Search</h3>
+                            <p>find work around you</p>
+                        </div>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -215,14 +227,83 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+            <h3 class="myHeader">
+                Our Services
+            </h3>
+            <div id="card-deck">
+                <div class="card">
+                    <img src="../res/images/010-search-1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Search</h5>
+                        <p class="card-text">Look for services around you and get it done with ease</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../res/images/005-technical-support-1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Get Work</h5>
+                        <p class="card-text">Helps you to find work suitable to your occupation</p>
+                    </div>
+                </div>
+                <div class="card" >
+                    <img src="../res/images/003-favorite.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Rate Services</h5>
+                        <p class="card-text">Let the service provider know how much you loved it</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../res/images/002-testing.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Post Work</h5>
+                        <p class="card-text">Post your work requirements to let service providers know</p>
+                    </div>
+                </div>
+            </div>
+            <h3 class="myHeader">
+                Meet the Developers
+            </h3>
+            
+
+            <div class="row flex evenly wrap">
+                <div class="col-md-5 developer flex">
+                    <div><img src="../res/developer/me.jpeg" alt=""></div>
+                    <div class="flex-center flex">
+                        <h4>Jayant Katia</h4>    
+                        <p>Life long student who has a knack for new technology and its applicaton. Enthusiastic team player who has interest in sports.</p>
+                    </div>
+                </div>
+                <div class="col-md-5 developer flex">
+                    <div><img src="../res/developer/sir.jpg" alt=""></div>
+                    <div class="flex-center flex">
+                        <h4>Rajesh Bansal</h4>    
+                        <p>20+ Years experience in Training & Development. Loves coding in Java, C++, Python, Android. Founder - <a href="www.realjavaonline.com">realjavaonline.com</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="myHeader">
+                Reach Us
+            </h3>
 
 
+            <div class="reachus">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.880733791601!2d74.95013941558398!3d30.21195128182168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391732a4f07278a9%3A0x4a0d6293513f98ce!2sBanglore%20Computer%20Education%20(C%20C%2B%2B%20Android%20J2EE%20PHP%20Python%20AngularJs%20Spring%20Java%20Training%20Institute)!5e0!3m2!1sen!2sin!4v1594722447373!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fjavascript&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>            </div>
 
-
-
-        </div>
+                </div>
+           
+            <!-- <div class="flex wrap reachus evenly">
+                <div>
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.880733791601!2d74.95013941558398!3d30.21195128182168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391732a4f07278a9%3A0x4a0d6293513f98ce!2sBanglore%20Computer%20Education%20(C%20C%2B%2B%20Android%20J2EE%20PHP%20Python%20AngularJs%20Spring%20Java%20Training%20Institute)!5e0!3m2!1sen!2sin!4v1594722447373!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div>
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fjavascript&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>            </div>
+        </div> -->
     </div>
-
+    <footer> JayantKatia-BCE&copy2020
+    </footer>
     <!--BS JS and jQuery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>

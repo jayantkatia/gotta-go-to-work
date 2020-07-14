@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPS | Search</title>
+    <title>WP | Search</title>
     <link href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style-citizen-search.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -92,7 +92,7 @@
 
 <body ng-app="myModule" ng-controller="myController" ng-init="fetchAll();start();">
     <?php include_once("models-navbar.php")?>
-    <div class="center">
+    <div class="center-SearchFields">
     <select ng-options="obj.category for obj in categories" ng-model="categorySelected">
     </select>
     <select ng-options="obj.city for obj in cities" ng-model="citySelected" >
@@ -102,18 +102,17 @@
     </button>
     </div>
 
-    <div class="row m-2">
-        <div class="col-md-3" ng-repeat="card in cards">
-            <div class="card">
+    <div id="card-deck">
+            <div class="card" ng-repeat="card in cards">
                 <img ng-src="../uploads/workers/{{card.ppic}}" style="height:100px;" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card-body ">
                     <p class="card-text">
                         {{card.name}}
                     </p>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal" ng-click="doTransfer(card);">See More Details</a>
                 </div>
             </div>
-        </div>
+        
     </div>
 
     <div class="modal" tabindex="-1" id="modal" role="dialog">

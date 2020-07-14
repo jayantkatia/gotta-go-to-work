@@ -13,7 +13,7 @@ if(!isset($_SESSION["activeUser"])){
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style-citizen-dashboard.css">
-    <title>MPS | Dashboard</title>
+    <title>WP | Dashboard</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
     <script>
