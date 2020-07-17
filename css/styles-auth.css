@@ -1,5 +1,5 @@
-
-#prev{
+/* Login Image */
+/* #prev{
     display: block;
     border:2px solid black;
     width:150px;
@@ -11,22 +11,28 @@
     background-size: contain;
     margin: 0 auto;
     margin-bottom: 5%;
+} */
+/* Form Basic css */
+body{
+    box-sizing: border-box;
 }
 div.form-group label{
     font-weight: 600;
-    /* //font-size: xx-large; */
 }
 div.form-group span{
     font-size: small;
     font-weight: 500;
 }
+/* Category Switch button margin */
 #categorySignUp{
     position: relative;
     left:10%;
 }
+/* Forgot Password hidden in modal visible after click button */
 #forgotPasswordHidden{
     display: none;
 }
+/* Forgot Password link in login modal */
 #forgotPasswordFormLink{
     color:#375BA9;
     font-weight: bold;
@@ -34,14 +40,10 @@ div.form-group span{
 
 
 
-
+ /* Navbar Bootstrap Customisation */
 body{
-    background-color: #EBEBEB;
+    background-color: #bdbdbd;
 }
-
-
-
-
 nav{
     background-color:#fff;
 }
@@ -52,7 +54,9 @@ nav{
     margin:0 1.5rem;
     cursor: default;
 }
-
+#brand-name img{
+    height:2rem;
+}
 
 .navbar{
     padding:0 1rem;
@@ -61,8 +65,11 @@ nav{
     color:#375BA9;
     font-weight: bolder;
     font-size: larger;
-    cursor:pointer;
+    
     margin:0 3rem;
+}
+.nav-item a{
+    cursor:pointer;
 }
 
 
@@ -85,6 +92,9 @@ nav{
     }
 }
 
+
+
+/* Modals Bootstrap Customisation */
 
 .modal-title{
     color:#375BA9;
@@ -113,4 +123,182 @@ nav{
 }
 .btn-secondary{
     font-weight: bolder;
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(222, 138, 2)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.custom-toggler.navbar-toggler {
+    border-color: #fff ;
+} 
+
+/* Alert Customisation */
+.alert{
+    margin:0;
+}
+.hidden{
+    display: none;
+}
+
+
+/* SuccessfulModal */
+#successfulModal,#successfulModalForgot{
+    color:green;
+    font-weight: bolder;
+    font-size: x-large;
+    text-align: center;
+}
+#successfulModal img,#successfulModalForgot img{
+    display: block;
+    margin:0 auto;
+}
+#successfulModal .modal-body , #successfulModalForgot .modal-body{
+    border:5px solid green;
+    border-radius: 1rem;
+    margin:1rem;
+}
+
+
+
+
+#carouselExampleControls,#carouselExampleControls img{
+    height:400px;
+}
+@media only screen and (max-width:900px){
+    #carouselExampleControls,#carouselExampleControls img{
+        height:300px;
+    }
+}
+@media only screen and (max-width:500px){
+    #carouselExampleControls,#carouselExampleControls img{
+        height:200px;
+    }
+}
+
+
+.carousel-caption{
+    font-weight: bold;
+    font-size: medium;
+}
+.left-black{
+    text-align: left;
+    left:5%;
+    color: black;
+    
+}
+
+.myHeader{
+  font-weight: bolder;
+  text-align: center;
+  padding: 0.75rem;
+  color:#274a96;
+  background-color: #fff;
+  /* border-bottom: 1PX SOLID BLACK; */
+  box-shadow:inset 0 0 15px 6px lightgrey;
+  margin:0;
+  font-size: 1.8rem;
+
+}
+
+#card-deck{
+    display: flex;
+    padding:1%;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: grey; */
+}
+#card-deck>div{
+    margin:2rem;
+    text-align: center;
+    max-width:18rem;
+}
+#card-deck>div>img{
+    width: 50%;
+    margin: 10px auto;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.card{
+    /* cursor: pointer; */
+    border: 1px solid black;
+}
+.card:hover{
+    box-shadow:0 0 5px 5px grey;
+}
+.card h5{
+    font-weight: bolder;
+}
+
+
+
+.evenly{
+    justify-content: space-evenly;
+
+}
+.row{
+    margin-left:0;
+    margin-right:0;
+}
+.developer{
+    padding:0;
+    margin:3rem 1rem;
+    /* max-height: 22rem; */
+    width:25rem;
+    height:19rem;
+    
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.developer>div{
+    width: 50%;
+    /* max-height:25rem;      */
+}
+.developer img{
+    width:100%;
+    height: 100%;
+    border: 2px solid black;
+}
+.developer:hover{
+    box-shadow:0 0 5px 5px grey;
+    
+}
+
+.no-padding{
+    padding:0;
+}
+.flex{
+    display: flex;
+}
+.flex-center{
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding:0.5rem; 
+    background-color: #fff;
+    border: 2px solid black;
+    border-left: 1px;
+   
+}
+.flex-center h4{
+    font-weight: bolder;
+}
+.reachus{
+    margin:2rem;
+    border: 3px solid black;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.reachus iframe{
+    margin:1rem;
+}
+footer{
+    background-color:#191919 ;
+    font-weight: bold;
+    padding:0.5rem;
+    color: white;
+    /* height:40px; */
+    text-align: center;
 }

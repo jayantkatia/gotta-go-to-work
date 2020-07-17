@@ -3,9 +3,8 @@ session_start();
 include_once('connection.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username=$_POST['username'];
-}else{
-    $username=$_GET['username'];    
 }
+
 
 $query="select * from users where username='$username' and status='1'";
 $queryResult=mysqli_query($dbConnection,$query);
@@ -21,8 +20,26 @@ if($count){
     $cmpPass=$_POST['password'];
     $row=mysqli_fetch_array($queryResult);
     if($cmpPass===$row['password']){
-        echo 'Successful Login,'.$row['category'];  //added
+        // echo 'Successful Login,'.$row['category'];  //added
+        
         $_SESSION["activeUser"]=$username;
+        
+        if($username=="admin"){
+            echo "Successful Login,"."admin";
+            return;
+        }
+
+        $tableName= $row['category'].'s';
+        $queryExist="select * from $tableName where username='$username'";
+        $queryExistResult=mysqli_query($dbConnection,$queryExist);
+        // $rowExists=mysqli_fetch_array($queryExistResult);
+        // $countExists=0;
+        // if($rowExists["num_rows"]>0){
+        //     $countExists=1;
+        // }
+        $countExists=mysqli_num_rows($queryExistResult);
+        echo 'Successful Login,'.$row['category'].','.$countExists;
+
     }else{
         echo "Wrong Password";
     }

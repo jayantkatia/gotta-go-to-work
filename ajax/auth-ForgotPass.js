@@ -1,32 +1,30 @@
 $(document).ready(function () {
-    // $('#forgotPasswordModal').on('shown.bs.modal', function () {
-    //     $('#usernameForgotPassword').trigger('focus');
-    //   })
+   $('#forgotPasswordModal').on('shown.bs.modal', function () {
+        $('#usernameForgotPassword').trigger('focus');
+    });
     //gets password
     $('#forgotPasswordSubmit').click(function () {
         let username = $('#usernameForgotPassword').val();
+        if(!username){
+            alert("Username field empty");
+            return;
+        }
         let url = "../process/auth-ForgotPass.php?username=" + username;
         $.get(url, function (response) {
-            $('#forgotPasswordHidden').show();
-            $('#passwordForgotPassword').val(response);
+            // $('#forgotPasswordHidden').show();
+            // $('#passwordForgotPassword').val(response);
+            $("#forgotPasswordModal").modal('hide');
+            $('#successfulModalForgot').modal('show');
+            // $('#forgotContact').html(response);
+            setTimeout(function(){$('#successfulModalForgot').modal('hide');},4000);
         });
     });
-    //clears fields 
-
-    //on hide calls clear
-    // $('#forgotPasswordModal').on('hidden.bs.modal', function () {
-    //     alert("Haahah23");
-    //     console.log("ndjasndj");
-    //     clearEverythingForgotPassword();
-    // });
-
     $('#forgotPasswordModal').on('hidden.bs.modal', function () {
         clearEverythingForgotPassword();
     });
-    
     function clearEverythingForgotPassword() {
         $('#forgotPasswordForm').trigger('reset');
-        $('#forgotPasswordHidden').hide();
-        $('#passwordForgotPassword').val('');
+        // $('#forgotPasswordHidden').hide();
+        // $('#passwordForgotPassword').val('');
     }
 });

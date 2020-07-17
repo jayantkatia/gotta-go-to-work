@@ -1,7 +1,7 @@
 <?php
 include_once("connection.php");
 //querying if entry exists
-$username=$_POST['username'];
+$username=$_GET['username'];
 $queryUsername="select * from workers where username='$username'";
 $queryUsernameResult=mysqli_query($dbConnection,$queryUsername);
 if(!mysqli_error($dbConnection)){
@@ -49,7 +49,7 @@ else{
     $querySaveUpdate=$querySaveUpdate.");";
 }
  
-echo "<br>";
+echo "<br>$querySaveUpdate";
 $querySaveUpdateResult=mysqli_query($dbConnection,$querySaveUpdate);
 
 
@@ -62,6 +62,7 @@ else{
     $row=mysqli_fetch_array($queryUsernameResult);
     if(isset($row['ppic'])){
     $oldFile=$row['ppic'];
+    echo $oldFile;
     unlink("../uploads/workers/$oldFile");
     }
 
@@ -84,13 +85,13 @@ else{
 //apic logic
 $orgName=$_FILES['apic']['name'];
 if($orgName==''){
-        return;
+        
 }else{
 
             $row=mysqli_fetch_array($queryUsernameResult);
         if(isset($row['apic'])){
              $oldFile=$row['apic'];
-              unlink("uploads/$oldFile");
+              unlink("../uploads/worker/$oldFile");
             }   
         
 
@@ -111,6 +112,7 @@ if($orgName==''){
 
     }
 
+ header("location: ../views/worker-dashboard.php?flag=1");
 
 
 ?>

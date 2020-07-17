@@ -1,3 +1,81 @@
 body{
-    margin:5%;
+    box-sizing: border-box;
 }
+fieldset{
+    border:2px solid #375BA9;
+    border-radius: 2rem;
+    background-color: #fff;
+    padding:2rem;
+    margin:2rem;
+}
+form{
+    padding: 0 2rem;
+}
+legend{
+    display: flex;
+    align-items: baseline;
+    margin:0;
+    width:auto;
+}
+legend>div>label{
+    position: relative;
+    right:2.5rem;
+}
+.inputFile{
+    opacity:0;
+    z-index:-1;
+    position: absolute;
+}
+.flexible{
+    width:0px;
+}
+#prev{
+    display: block;
+    border:2px solid black;
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    background-image: url('../res/images/user.png');
+    background-color: #EBEBEB   ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* margin: 0 auto; */
+    
+} 
+label{
+    font-weight: bolder;
+}
+.form-control , textarea{
+    border: 1px solid black;
+}
+.red{
+    color:red;
+}
+.gold{
+    background-color:#DE8A02;
+    color:#fff;
+    font-weight: bold;
+    font-size: larger;
+    border-radius: 5px;
+}
+.gold:hover{
+    color:#fff;
+    box-shadow: 0 5px 15px #DE8A02;
+}
+.hidden{
+    display:none;
+}
+.flex{
+    display:flex;
+}
+.baseline-end{
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+
+/* .flex>input{
+    display: block;
+} */
