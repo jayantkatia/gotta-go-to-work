@@ -105,6 +105,9 @@ nav{
 .custom-toggler.navbar-toggler {
     border-color: #fff ;
 } 
+#brand-name img{
+    height:2rem;
+}
 </style>
 
 <div class="sticky-top">
@@ -113,7 +116,7 @@ nav{
                     data-target="#navbarToggler">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a id="brand-name" href="#" class="navbar-brand">WorkPanel <span>&nbsp;|</span> <span class="blue">{{userPageInfo}}</span></a>
+                <a id="brand-name" href="#" class="navbar-brand"><img src="../res/images/logo.jpg" alt=""> WorkPanel <span>&nbsp;|</span> <span class="blue">{{userPageInfo}}</span></a>
 
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav ml-auto mr-5">

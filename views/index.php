@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php 
  session_start();
  session_destroy();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -176,7 +176,7 @@
                     data-target="#navbarToggler">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a id="brand-name" href="#" class="navbar-brand">WorkPanel</a>
+                <a id="brand-name" href="#" class="navbar-brand"><img src="../res/images/logo.jpg" alt=""> WorkPanel</a>
 
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav ml-auto mr-5">

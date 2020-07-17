@@ -54,6 +54,9 @@ nav{
     margin:0 1.5rem;
     cursor: default;
 }
+#brand-name img{
+    height:2rem;
+}
 
 .navbar{
     padding:0 1rem;
