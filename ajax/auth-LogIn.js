@@ -26,14 +26,15 @@ $(document).ready(function () {
           } else {
             location.href = "worker-profile.php";
           }
-        } else {
+        } else if(dataPiece[1] == "citizen") {
           if (dataPiece[2] == 1) {
             location.href = "citizen-dashboard.php";
-
           } else {
             location.href = "citizen-profile.php";
           }
-        }
+          }else{
+          location.href = "admin-dashboard.php";
+         }
       } else {
         $('#logInHelp').removeClass('invisible').html(dataPiece[0]).css('color', 'red');
       }

@@ -1,10 +1,15 @@
+<?php session_start();
+if(!isset($_SESSION["activeUser"])){
+    header("location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | Dashboard</title>
+    <link rel="stylesheet" href="../css/style-admin.css">
     <!-- Bs CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <!-- Angular -->
@@ -17,6 +22,13 @@
     <script>
         var myModule = angular.module("myModule", []);
         myModule.controller("myController", function ($scope, $http) {
+            $scope.userId;
+            $scope.userPageInfo;
+            $scope.start=function(){
+                $scope.userId='<?php echo $_SESSION["activeUser"];?>';
+                $scope.userPageInfo=" "+$scope.userId+"\'s  Dashboard";
+            }
+
             function notok(error){
                 console.log(error);
             }
@@ -46,44 +58,20 @@
     </script>
 </head>
 
-<body ng-app="myModule" ng-controller="myController">
-    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="#">ManPowerServices</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-danger my-2 my-sm-0" type="">Logout</button>
-            </form>
-        </div>
-    </nav>
-
-
+<body ng-app="myModule" ng-controller="myController" ng-init="start();">
+    <?php include_once("models-navbar.php");?>
 
 
     <div id="cards-container">
-        <div class="card" style="width: 18rem;">
-            <img src="../res/images/user.png" style="max-height:9rem;" class="card-img-top" alt="...">
+        <div class="card">
+            <img src="../res/images/user.png" style="max-width:9rem;" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">User Manager</h5>
+                <h5 class="card-title font-weight-bold">User Manager</h5>
                 <p class="card-text">Handle user access </p>
-                <a data-toggle="modal" data-target="#usersModal" class="btn btn-primary">Go somewhere</a>
+                <a data-toggle="modal" data-target="#usersModal" class="btn btn-primary text-white">Manage</a>
             </div>
         </div>
     </div>
-
-
-
 
 
     <div class="modal" tabindex="-1" id="usersModal" role="dialog">
@@ -110,6 +98,7 @@
                     </div>
                     <hr>
                     <table>
+                        <thead>
                         <tr>
                             <th>Username</th>
                             <th>Password</th>
@@ -120,6 +109,7 @@
                             <th>Unblock</th>
                             <th>Delete</th>
                         </tr>
+                        </thead>
                         <tr ng-repeat="obj in usersData">
                             <td>{{obj.username}}</td>
                             <td>{{obj.password}}</td>
@@ -127,13 +117,13 @@
                             <td>{{obj.dos}}</td>
                             <td>{{obj.status}}</td>
                             <td>
-                                <button class="btn-secondary" ng-click="blockSwitch(obj.username,0,$index);">Block</button>
+                                <button class=" btn btn-secondary" ng-click="blockSwitch(obj.username,0,$index);">Block</button>
                             </td>
                             <td>
-                                <button class="btn-primary" ng-click="blockSwitch(obj.username,1,$index);">Unblock</button>
+                                <button class="btn btn-primary" ng-click="blockSwitch(obj.username,1,$index);">Unblock</button>
                             </td>
                             <td>
-                                <button class="btn-danger" ng-click="deleteUser(obj.username,$index)">Delete</button>
+                                <button class="btn btn-danger" ng-click="deleteUser(obj.username,$index)">Delete</button>
                             </td>
                         </tr>
                     </table>
@@ -144,10 +134,6 @@
             </div>
         </div>
     </div>
-
-
-
-
 
 
     <script src="../js/admin-main.js"></script>

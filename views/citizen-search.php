@@ -78,13 +78,44 @@
             $scope.doDisplay=function(){
                 $scope.cards=$scope.data.filter(obj=>{
                     if(obj.city==$scope.citySelected.city && obj.category==$scope.categorySelected.category){
+                        if(obj.ppic==null)
+                        {
+                            obj.ppic="../res/images/001-man.png";
+                            
+                        }    
+                        else{
+                                obj.ppic="../uploads/workers/"+obj.ppic;
+                         }
+                            // console.log(obj.ppic);
+                        if(obj.total==0){
+                            obj.total=1;
+                        }
                         return true;
                     }
                 });
+                // console.log($scope.cards);
                 // console.log($scope.cards);console.log($scope.citySelected.city);
             }
             $scope.doTransfer=function(card){
                 $scope.modalInfo=card;
+            }
+
+            $scope.sendMessage=function(contact,userId){
+                // console.log("Here");
+                if($scope.message!=""){
+                    let message=$scope.message;
+                    $http.get("../process/sendMessage.php?mobile="+contact+"&message="+message).then(ok,notok);
+                    function ok(response){
+                        if(response.data=="ok")
+                            alert("Message Send Successfully...");
+                            // console.log(response.data);
+                    }
+                    function notok(error) {
+                        console.log(error);
+                    }
+                }else{
+                    alert("Please fill on your message...");
+                }
             }
 
         });
@@ -105,16 +136,33 @@
 
     <div id="card-deck">
             <div class="card" ng-repeat="card in cards">
-                <img ng-src="../uploads/workers/{{card.ppic}}" style="height:100px;" class="card-img-top" alt="...">
+                <img ng-src={{card.ppic}}  class="card-img-top" alt="...">
                 <div class="card-body ">
-                    <p class="card-text">
+                    <p class="card-text mb-0 font-weight-bold">
                         {{card.name}}
                     </p>
+                    <p class="card-text mb-0">
+                        {{card.contact}}
+                    </p>
+               
+                    
+                     <!-- <div class="stars-ratings" style="width:{{1.0*card.review / card.total *25}}px"> 
+                        <img src="../res/images/004-star-2.png" alt="">
+                        <img src="../res/images/004-star-2.png" alt="">
+                        <img src="../res/images/004-star-2.png" alt="">
+                        <img src="../res/images/004-star-2.png" alt="">
+                        <img src="../res/images/004-star-2.png" alt="">
+                    </div> -->
+                    <div class="ratings" >
+                        <div class="empty-stars"></div>
+                        <div class="full-stars" style="width:{{1.0*card.review / card.total *20}}%"></div>
+                    </div>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal" ng-click="doTransfer(card);">See More Details</a>
                 </div>
             </div>
-        
     </div>
+
+
 
     <div class="modal" tabindex="-1" id="modal" role="dialog">
         <div class="modal-dialog" role="document">
@@ -125,14 +173,29 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <p>{{modalInfo.contact}}</p>
-                <p>{{modalInfo.firm}}</p>
-                <p></p>
+                <div class="modal-body">
+                      <p>Name : <span class="font-weight-bold"> {{modalInfo.name}} </span> </p>
+                      <p>Contact : <span class="font-weight-bold"> {{modalInfo.contact}} </span> </p>
+                      <p>Profession : <span class="font-weight-bold"> {{modalInfo.category}} </span> </p>
+                      <p>Specialisation : <span class="font-weight-bold"> {{modalInfo.spec}} </span> </p>
+                      <p>Experience(in yrs) : <span class="font-weight-bold"> {{modalInfo.exp}} </span> </p>
+                      <p>Firm : <span> {{modalInfo.firm}} </span> </p>
+                      <!-- <div>Ratings</div> -->
+                      <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Message, if you are interested to have your work done:</label>
+                            <textarea class="form-control border border-dark" ng-model="message" rows="2"></textarea>
+                        </div>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                     <input type="submit" ng-click="sendMessage(modalInfo.contact,userId);" class="btn btn-primary" value="Message">
+                </div>
+               
             </div>
         </div>
     </div>
     
-
 </body>
 
 </html>

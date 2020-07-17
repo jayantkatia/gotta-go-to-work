@@ -149,21 +149,20 @@ if(!isset($_SESSION["activeUser"])){
                 </datalist>
             </div>
             <div class="form-group col-md-6">
-                <label for="workerSpec">Specialistaion</label>
-                <input type="text" class="form-control" id="workerSpec" name="spec">
+                <label for="workerSpec">Specialistaion<span class="red">*</span></label>
+                <input type="text" class="form-control" required id="workerSpec" name="spec">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="workerExp">Worker Experience</label>
-                <select id="workerExp" class="form-control" name="exp">
+                <label for="workerExp">Worker Experience<span class="red">*</span></label>
+                <select id="workerExp" class="form-control"  required name="exp">
                     <option value="">Please select number of years</option>
-
                 </select>
             </div>
             <div class="form-group col-md-4">
-                <label for="workerFirm">Firm</label>
-                <input type="text" class="form-control" id="workerFirm" name="firm">
+                <label for="workerFirm">Firm<span class="red">*</span></label>
+                <input type="text" class="form-control"required id="workerFirm" name="firm">
             </div>
         </div>
         <div class="form-row">

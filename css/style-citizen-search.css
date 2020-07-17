@@ -1,6 +1,3 @@
-/* body{
-    box-sizing: border-box;
-} */
 .center-SearchFields{
     margin:1rem;
     text-align: center;
@@ -17,32 +14,47 @@
 #card-deck>div{
     margin:2rem;
     text-align: center;
-    max-width:18rem;
+    width:18rem;
 }
-
-
-
-
-/* .row{
-    margin:2rem;
-} */
-
-
-/* 
-#card-deck{
-    display: flex;
-    margin: 1%;
-    flex-wrap: wrap;
-}
-#card-deck>div{
-    margin:1rem;
-    text-align: center;
-    max-width:18rem;
-}
-#card-deck>div>img{
-    width: 50%;
-    margin: 10px auto;
-    height: auto;
+.card>img{
+    width:8rem;
+    margin:1rem auto 0;
+    height:8rem;
     border-radius: 50%;
-    border: 1px solid black;
+}
+
+
+
+.ratings {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    color: #b1b1b1;
+    overflow: hidden;
+}
+.full-stars {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color:gold;
+}
+.empty-stars:before, .full-stars:before {
+    content:"\2605\2605\2605\2605\2605";
+    font-size: 1.8rem;
+}
+/* 
+ .stars-ratings{
+    /* width: fit-content; */
+    /* height:1.5rem;
+    overflow: hidden;
+    width: 100px;
+    margin: 0.5rem auto; */
+    /* white-space: nowrap; */
+    /* overflow-y: hidden; */
+ /*}
+.stars-ratings img{
+    width:20px;
+    height: 20px;
 } */

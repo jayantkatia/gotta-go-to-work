@@ -89,7 +89,6 @@ if(!isset($_SESSION["activeUser"])){
     <input type="text" id="citizenUsername" class="hidden" ng-model="userId" readonly />
 
     <div id="card-deck">
-
         <div class="card" id="userProfileCard">
             <img src="../res/images/user.png" class="card-img-top" alt="...">
             <div class="card-body">
