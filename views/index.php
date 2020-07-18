@@ -9,12 +9,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WP | Start</title>
     <!-- Font Awesome -->
+    <link rel='manifest' href='manifest.webmanifest'>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <!-- Bs CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
     <!-- Custom Css -->
     <link rel="stylesheet" href="../css/styles-auth.css" />
     <!-- Provides numeric auth -->
+  
+    <script>
+       if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('/sw.js', { scope: '/'})
+            .then(() => {
+                console.info('Developer for Life Service Worker Registered');
+            }, err => console.error("Developer for Life Service Worker registration failed: ", err));
+    
+        navigator.serviceWorker
+            .ready
+            .then(() => {
+                console.info('Developer for Life Service Worker Ready');
+            });
+    }
+    </script>
     <script src="../js/numericsOnly.js"></script>
 </head>
 
@@ -311,6 +328,7 @@
     <script src="../ajax/auth-SignUp.js"></script>
     <script src="../ajax/auth-LogIn.js"></script>
     <script src="../ajax/auth-ForgotPass.js"></script>
+
 </body>
 
 </html>
