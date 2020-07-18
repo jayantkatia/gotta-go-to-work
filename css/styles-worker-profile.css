@@ -45,6 +45,7 @@ legend>div>label,#workerFileAadhar+label{
 }
 .inputFile{
     opacity:0;
+    width:10px;
     z-index:-1;
     position: absolute;
 }

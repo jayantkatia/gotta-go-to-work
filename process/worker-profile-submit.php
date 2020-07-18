@@ -14,7 +14,7 @@ if(!mysqli_error($dbConnection)){
         $querySaveUpdate="insert into workers(username, ";
     }
 }
-echo $action;
+// echo $action;
 
 $arryfields=["name","contact","address","city","state","exp","category","spec","email","exptext","firm"];
 $fieldsConfirmed=array();
@@ -49,7 +49,7 @@ else{
     $querySaveUpdate=$querySaveUpdate.");";
 }
  
-echo "<br>$querySaveUpdate";
+// echo "<br>$querySaveUpdate";
 $querySaveUpdateResult=mysqli_query($dbConnection,$querySaveUpdate);
 
 
@@ -62,7 +62,7 @@ else{
     $row=mysqli_fetch_array($queryUsernameResult);
     if(isset($row['ppic'])){
     $oldFile=$row['ppic'];
-    echo $oldFile;
+    // echo $oldFile;
     unlink("../uploads/workers/$oldFile");
     }
 
@@ -77,7 +77,7 @@ else{
     $countSaveUpdatePic=mysqli_affected_rows($dbConnection);
     
     if($countSaveUpdatePic){
-        echo "New Pic Saved/Updated";
+        // echo "New Pic Saved/Updated";
     }
 
 }
@@ -106,7 +106,7 @@ if($orgName==''){
         $countSaveUpdatePic=mysqli_affected_rows($dbConnection);
 
         if($countSaveUpdatePic){
-            echo "New Pic Saved/Updated";
+            // echo "New Pic Saved/Updated";
         }
 
 

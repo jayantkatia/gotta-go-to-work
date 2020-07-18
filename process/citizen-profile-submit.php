@@ -11,7 +11,7 @@
             $action="save";
         }
     }
-    echo $action;
+    // echo $action;
 
 
 
@@ -60,7 +60,7 @@
         $querySaveUpdate=rtrim($querySaveUpdate,',');
         $querySaveUpdate=$querySaveUpdate." where username='$username';";
      }
-       echo $querySaveUpdate;
+    //    echo $querySaveUpdate;
 
 
 
@@ -76,7 +76,7 @@
         if(mysqli_error($dbConnection)){
             $countSaveUpdate=mysqli_affected_rows($dbConnection);
             if($count){
-                echo "Info Saved/Updated...";
+                // echo "Info Saved/Updated...";
             }
         }
 
@@ -100,7 +100,7 @@
             //uplodaing it to uplads/citizens folder
             $destination="../uploads/citizens/$pic";
             move_uploaded_file($tmpName,$destination);
-            echo $pic;
+            // echo $pic;
 
             //updating it in database
             $querySaveUpdatePic="update citizens set pic='$pic' where username='$username'";
@@ -108,12 +108,12 @@
            
             $countSaveUpdatePic=mysqli_affected_rows($dbConnection);
             if($countSaveUpdatePic){
-                echo "New Pic Saved/Updated";
+                // echo "New Pic Saved/Updated";
             }
 
 
         }
         //-------------------------------------------------
-     header("location: ../views/citizen-dashboard.php?flag=1");
+        header("location: ../views/citizen-dashboard.php?flag=1");
 
 ?>

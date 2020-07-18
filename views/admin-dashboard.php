@@ -3,6 +3,7 @@ if(!isset($_SESSION["activeUser"])){
     header("location:index.php");
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,8 +136,9 @@ if(!isset($_SESSION["activeUser"])){
         </div>
     </div>
 
-
+   
     <script src="../js/admin-main.js"></script>
+
 </body>
 
 </html>

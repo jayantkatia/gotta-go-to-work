@@ -179,7 +179,7 @@
                       <p>Profession : <span class="font-weight-bold"> {{modalInfo.category}} </span> </p>
                       <p>Specialisation : <span class="font-weight-bold"> {{modalInfo.spec}} </span> </p>
                       <p>Experience(in yrs) : <span class="font-weight-bold"> {{modalInfo.exp}} </span> </p>
-                      <p>Firm : <span> {{modalInfo.firm}} </span> </p>
+                      <p>Firm : <span class="font-weight-bold"> {{modalInfo.firm}} </span> </p>
                       <!-- <div>Ratings</div> -->
                       <form>
                         <div class="form-group">
